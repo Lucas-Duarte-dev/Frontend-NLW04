@@ -16,9 +16,10 @@
     position: relative;
 }
 .experienceBar > div > div {
-        height: 4px;
-        border-radius: 4px;
-        background-color: var(--green);
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--green);
+    transition: all 0.8s ease-in-out;
 }
 
 span.currentExperience {

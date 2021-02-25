@@ -19,11 +19,13 @@
     height: 4px;
     border-radius: 4px;
     background-color: var(--green);
-    transition: all 0.8s ease-in-out;
 }
 
 span.currentExperience {
     position: absolute;
     top: 12px;
     transform: translateX(-50%);
+}
+.experienceBar > div > div, span.currentExperience {
+    transition: all 0.8s ease-in-out;
 }

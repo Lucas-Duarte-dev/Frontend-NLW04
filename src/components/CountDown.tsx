@@ -2,22 +2,19 @@ import { useContext } from "react";
 import { CountdownContext } from "../contexts/CountDownContext";
 import styles from "../styles/components/CountDown.module.css";
 
-
-
 export function CountDown() {
-  const { 
+  const {
     minutes,
     seconds,
     hasFinishd,
     isActive,
     resetCountDown,
-    startCountDown 
-  } = useContext(CountdownContext)
+    startCountDown,
+  } = useContext(CountdownContext);
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, "0").split("");
   const [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("");
 
-  
   return (
     <div>
       <div className={styles.countDownContainer}>
@@ -34,7 +31,8 @@ export function CountDown() {
 
       {hasFinishd ? (
         <button disabled className={styles.countDownButton}>
-          Ciclo encerrado <img src="/icons/check-circle.svg" alt="check circle"/>
+          Ciclo encerrado{" "}
+          <img src="/icons/check-circle.svg" alt="check circle" />
         </button>
       ) : (
         <>
@@ -44,7 +42,7 @@ export function CountDown() {
               onClick={resetCountDown}
               className={`${styles.countDownButton} ${styles.countDownButtonActive}`}
             >
-              Abandonar ciclo <img src="icons/close.svg" alt="close"/>
+              Abandonar ciclo <img src="icons/close.svg" alt="close" />
             </button>
           ) : (
             <button
@@ -52,7 +50,7 @@ export function CountDown() {
               onClick={startCountDown}
               className={styles.countDownButton}
             >
-              Iniciar um ciclo <img src="icons/play.svg" alt="body"/>
+              Iniciar um ciclo <img src="icons/play.svg" alt="body" />
             </button>
           )}
         </>
